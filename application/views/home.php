@@ -298,6 +298,33 @@
 				}
 			});
 
+
+			// *** social sharing *** //
+            twetter_share.click(function(e){
+                var IMG = GetImageData();
+                window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(IMG.u), 'sharertwt', 'toolbar=0,status=0,width='+IMG.w+',height='+IMG.h);
+            });
+
+            facebook_share.click(function(e){
+                var IMG = GetImageData();
+                window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(IMG.u), 'sharer', 'toolbar=0,status=0,width='+IMG.w+',height='+IMG.h);
+            });
+
+            pinterest_share.click(function(e){
+                var IMG = GetImageData();
+                window.open('http://www.pinterest.com/pin/create/button/?media=' + encodeURIComponent(u) + '&url=' + encodeURIComponent(location.href), 'sharerpinterest', 'toolbar=0,status=0,width='+IMG.w+',height='+IMG.h);
+            });
+
+            function GetImageData () {
+                
+                var IMG = document.getElementById('image-preview-img');
+                return {
+                    u: IMG.src,
+                    w: IMG.height,
+                    h: IMG.width
+                };
+            }
+
 		</script>
 
 	</body>
