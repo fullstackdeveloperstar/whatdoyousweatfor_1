@@ -36,28 +36,7 @@
 
 	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId            : '177521976289977',
-	      autoLogAppEvents : true,
-	      xfbml            : true,
-	      version          : 'v3.0'
-	    });
 
-	    FB.getLoginStatus(function(response){
-	    	console.log(response);
-	    });
-	  };
-
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "https://connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
 	    
 		
 	<div class="page-wrapper">
@@ -319,26 +298,6 @@
 				}
 			});
 
-			facebook_share.click(function(){
-				FB.login(function(response){
-					if(response.status == 'connected')
-					{
-
-					}
-					else if(response.status == 'not_authorized')
-					{
-
-					}
-				},{scope:'publish_actions'});
-
-				FB.api('/me/photos','post',{url:'https://help.xyzscripts.com/wp-content/uploads/2018/03/https.png'}, function(response){
-							console.log(response);
-				})
-
-
-				
-				
-			});
 		</script>
 
 	</body>
