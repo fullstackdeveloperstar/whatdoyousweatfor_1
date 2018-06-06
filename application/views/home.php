@@ -322,7 +322,7 @@
 				var obj = GetImageData();
 				console.log("SharingImage = "+JSON.stringify(obj));
 				
-				window.open('http://www.pinterest.com/pin/create/button/?media=' + encodeURIComponent(obj.u) + '&url=' + encodeURIComponent(location.href), 'sharerpinterest', 'toolbar=0,status=0,width='+obj.w+',height='+obj.h);
+				window.open('http://www.pinterest.com/pin/create/button/?media=' + encodeURIComponent(obj.u), 'sharerpinterest', 'toolbar=0,status=0,width='+obj.w+',height='+obj.h);
 			});
 
 			function GetImageData () {
