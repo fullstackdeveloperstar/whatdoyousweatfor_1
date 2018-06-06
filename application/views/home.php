@@ -158,6 +158,9 @@
 				</div>
 			</div>
 		</footer>
+
+		<img id="testSharingImage" src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg" alt="test image" style="display: none">
+
 	</div>	
 	
 	
@@ -303,24 +306,31 @@
             twetter_share.click(function(e){
 
 				var obj = GetImageData();
+				console.log("SharingImage = "+JSON.stringify(obj));
+
 				window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(obj.u), 'sharertwt', 'toolbar=0,status=0,width='+obj.w+',height='+obj.h);
 			});
 
 			facebook_share.click(function(e){
 				var obj = GetImageData();
-				console.log(obj);
+				console.log("SharingImage = "+JSON.stringify(obj));
 				
 				window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(obj.u), 'sharer', 'toolbar=0,status=0,width='+obj.w+',height='+obj.h);
 			});
 
 			pinterest_share.click(function(e){
 				var obj = GetImageData();
+				console.log("SharingImage = "+JSON.stringify(obj));
+				
 				window.open('http://www.pinterest.com/pin/create/button/?media=' + encodeURIComponent(obj.u) + '&url=' + encodeURIComponent(location.href), 'sharerpinterest', 'toolbar=0,status=0,width='+obj.w+',height='+obj.h);
 			});
 
 			function GetImageData () {
 				
-				var IMG = document.getElementById('image-preview-img');
+				// Here you should recieved image data.
+				// I am using some mock here, in order to test sharing functionality
+				// var IMG = document.getElementById('image-preview-img');
+				var IMG = document.getElementById('testSharingImage'); // this is image from the web, provided in the line:162
 				
 				var result = {
 					u: IMG.src,
